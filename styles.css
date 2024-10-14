@@ -1,0 +1,347 @@
+/* VARIABLES */
+:root {
+  --red: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+/* BASE STYLES */
+body {
+  /* overflow-x: hidden; */
+  font-family: "Space Grotesk", sans-serif;
+}
+.error {
+  color: var(--red);
+  font-size: 0.8rem;
+  display: block;
+}
+input:hover {
+  cursor: pointer;
+}
+/* FONTS */
+
+/* MOBILE STYLES */
+/* header */
+.header,
+.header__card-back-div__text-div {
+  position: relative;
+}
+.header__bg-mobile {
+  width: 100%;
+  height: 34vh;
+  display: block;
+}
+.header__bg-desktop {
+  width: 100%;
+  display: none;
+}
+.header__card-back-div,
+.header__card-front-div {
+  width: 75%;
+  position: absolute;
+}
+.header__card-back-div {
+  top: 2rem;
+  right: 1rem;
+}
+.header__card-front-div {
+  bottom: -2rem;
+  left: 1rem;
+}
+.header__card-back,
+.header__card-front {
+  width: 100%;
+}
+.header__card-back-div__text-div__text {
+  position: absolute;
+  top: 3.25rem;
+  right: 1.5rem;
+  font-size: 0.6rem;
+  color: var(--white);
+}
+.header__card-front__logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 15%;
+}
+.header__card-front-div__text-div__text {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem;
+}
+.header__card-front-div__text-div__text__date-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.header__card-front-div__text-div__text__card-number {
+  color: white;
+}
+.header__card-front-div__text-div__text__date-div__name,
+.header__card-front-div__text-div__text__date-div__date {
+  font-size: 0.7rem;
+  color: var(--white);
+}
+
+/* main */
+.main {
+  padding: 5rem 1rem 3rem;
+}
+.form__input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+.form__input-div__label {
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
+}
+.form__input-div__input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--dark-grayish-violet);
+  border: 2px solid var(--light-grayish-violet);
+}
+.form__input-div__input::placeholder {
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  color: var(--light-grayish-violet);
+}
+
+/* Fieldset for Expiry Date and CVC */
+
+.form__expiry-cvc-fieldset {
+  border: none; /* Removing default fieldset border */
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.form__expiry-cvc-legend {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--very-dark-violet);
+  margin-bottom: 0.5rem;
+}
+
+/* Expiry date and CVC container */
+
+/* Expiry date container */
+.form__expiry-date-div__inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.form__expiry-date-div__input,
+.form__cvc-div__input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--dark-grayish-violet);
+  border: 2px solid var(--light-grayish-violet);
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+}
+
+.form__expiry-date-div__input::placeholder,
+.form__cvc-div__input::placeholder {
+  color: var(--light-grayish-violet);
+}
+
+/* Label styling for expiry date and CVC */
+.form__expiry-date-div__label,
+.form__cvc-div__label {
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
+}
+
+/* cvc input */
+.form__cvc-div__input {
+  width: 100%;
+}
+
+/* submit button */
+.form__button {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.75rem;
+}
+
+/* Completed section */
+.main__completed {
+  text-align: center;
+}
+.main__completed__h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--very-dark-violet);
+  margin: 1.5rem 0 1rem;
+}
+.main__completed__p {
+  color: var(--dark-grayish-violet);
+  margin-bottom: 2.5rem;
+}
+.main__completed__button {
+  display: block;
+  text-decoration: none;
+}
+.main__completed {
+  display: none;
+}
+
+/* MEDIA QUERIS */
+/* 375px and more */
+@media (min-width: 375px) {
+  * {
+    font-size: 20px;
+  }
+  .header__bg-mobile {
+    height: 40vh;
+  }
+  .header__card-back-div__text-div__text {
+    top: 3.4rem;
+    right: 1.7rem;
+  }
+  .main,
+  .header__card-div {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+}
+
+/* 375px and more */
+@media (min-width: 425px) {
+  * {
+    font-size: 22px;
+  }
+
+  .header__bg-mobile {
+    height: 46vh;
+  }
+
+  .header__card-back-div__text-div__text {
+    top: 3.9rem;
+    right: 1.9rem;
+  }
+
+  .main {
+    border: 1px solid var(--light-grayish-violet);
+  }
+}
+
+/* 768px and more */
+@media (min-width: 768px) {
+  .header__bg-mobile {
+    height: 47vh;
+  }
+
+  .header__card-back-div,
+  .header__card-front-div {
+    width: 45%;
+  }
+
+  .header__card-back-div {
+    top: 1.5rem;
+    right: 5rem;
+  }
+
+  .header__card-front-div {
+    bottom: -2rem;
+    left: 5rem;
+  }
+
+  .main {
+    margin-top: 1rem;
+  }
+}
+
+/* 1024px and more */
+@media (min-width: 1024px) {
+  * {
+    font-size: 18px;
+  }
+
+  body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .header {
+    width: 40%;
+  }
+
+  .main {
+    max-width: none;
+    width: 60%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .header__bg-mobile {
+    display: none;
+  }
+
+  .header__bg-desktop {
+    display: block;
+  }
+
+  .header__card-back-div,
+  .header__card-front-div {
+    width: 70%;
+  }
+
+  .header__card-front-div {
+    bottom: 53%;
+    left: 45%;
+  }
+
+  .header__card-back-div {
+    top: 53%;
+    right: -30%;
+  }
+}
+
+/* 1440px and more */
+@media (min-width: 1440px) {
+  * {
+    font-size: 20px;
+  }
+  .header__card-back-div__text-div__text {
+    top: 5rem;
+    right: 2.5rem;
+  }
+}
+
+/* 2560px and more */
+@media (min-width: 2560px) {
+  * {
+    font-size: 35px;
+  }
+}

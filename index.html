@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <!-- header cover image -->
+      <img
+        class="header__bg-mobile"
+        src="./images/bg-main-mobile.png"
+        alt="background image for mobile design"
+      />
+      <img
+        class="header__bg-desktop"
+        src="./images/bg-main-desktop.png"
+        alt="background image for desktop design"
+      />
+
+      <!-- back card -->
+      <div class="header__card-back-div">
+        <div class="header__card-back-div__text-div">
+          <img
+            src="./images/bg-card-back.png"
+            class="header__card-back"
+            alt="backside of card image"
+          />
+          <p class="header__card-back-div__text-div__text">000</p>
+        </div>
+      </div>
+      <!-- front card -->
+      <div class="header__card-front-div">
+        <div class="header__card-front-div__text-div">
+          <img
+            src="./images/bg-card-front.png"
+            class="header__card-front"
+            alt="frontside of card image"
+          />
+          <img
+            src="./images/card-logo.svg"
+            class="header__card-front__logo"
+            alt="card-logo image"
+          />
+          <div class="header__card-front-div__text-div__text">
+            <p class="header__card-front-div__text-div__text__card-number">
+              0000 0000 0000 0000
+            </p>
+            <div class="header__card-front-div__text-div__text__date-div">
+              <p class="header__card-front-div__text-div__text__date-div__name">
+                JANE APPLESEED
+              </p>
+              <p class="header__card-front-div__text-div__text__date-div__date">
+                00/00
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main class="main">
+      <!-- form section -->
+      <form action="submit" class="form">
+        <!-- name input div -->
+        <div class="form__input-div input_parent-div">
+          <label for="name" class="form__input-div__label"
+            >CARDHOLDER NAME</label
+          >
+          <input
+            type="text"
+            id="name"
+            class="form__input-div__input"
+            name="name"
+            autocomplete="given-name"
+            placeholder="e.g. Jane Appleseed"
+            aria-invalid="false"
+            aria-describedby="name-error"
+          />
+          <span
+            id="name-error"
+            class="form__input-div__error"
+            aria-live="polite"
+          ></span>
+        </div>
+
+        <!-- card number input div -->
+        <div class="form__input-div input_parent-div">
+          <label for="card-number" class="form__input-div__label"
+            >CARD NUMBER</label
+          >
+          <input
+            type="number"
+            id="card-number"
+            class="form__input-div__input"
+            name="card-number"
+            autocomplete="cc-number"
+            placeholder="e.g. 1234 5678 9123 0000"
+            aria-invalid="false"
+            aria-describedby="name-error"
+          />
+          <span
+            id="name-error"
+            class="form__input-div__error"
+            aria-live="polite"
+          ></span>
+        </div>
+
+        <!-- Expiry Date and CVC Fieldset -->
+        <fieldset class="form__expiry-cvc-fieldset">
+          <!-- <legend class="form__expiry-cvc-legend">Expiration Date & CVC</legend> -->
+
+          <!-- Expiry Date MM/YY -->
+          <div class="form__expiry-date-div">
+            <label for="expiry-month" class="form__expiry-date-div__label"
+              >EXP. DATE (MM/YY)</label
+            >
+            <div class="form__expiry-date-div__inputs input_parent-div">
+              <input
+                type="number"
+                id="expiry-month"
+                class="form__expiry-date-div__input"
+                name="expiry-month"
+                placeholder="MM"
+                min="1"
+                max="12"
+                autocomplete="cc-exp-month"
+                aria-invalid="false"
+                aria-describedby="expiry-error"
+              />
+              <input
+                type="number"
+                id="expiry-year"
+                class="form__expiry-date-div__input"
+                name="expiry-year"
+                placeholder="YY"
+                min="23"
+                max="99"
+                autocomplete="cc-exp-year"
+                aria-invalid="false"
+                aria-describedby="expiry-error"
+              />
+            </div>
+            <span
+              id="expiry-error"
+              class="form__expiry-date-div__error form__input-div__error"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <!-- CVC -->
+          <div class="form__cvc-div input_parent-div">
+            <label for="cvc" class="form__cvc-div__label">CVC</label>
+            <input
+              type="number"
+              id="cvc"
+              class="form__cvc-div__input"
+              name="cvc"
+              placeholder="e.g. 123"
+              min="100"
+              max="999"
+              autocomplete="cc-csc"
+              aria-invalid="false"
+              aria-describedby="cvc-error"
+            />
+            <span
+              id="cvc-error"
+              class="form__cvc-div__error form__input-div__error"
+              aria-live="polite"
+            ></span>
+          </div>
+        </fieldset>
+        <button type="submit" class="form__button">Confirm</button>
+      </form>
+
+      <!-- completed section -->
+      <section class="main__completed">
+        <img
+          class="main__completed__img"
+          src="./images/icon-complete.svg"
+          alt="complete tick showing card added successfully"
+        />
+        <h1 class="main__completed__h1">THANK YOU!</h1>
+        <p class="main__completed__p">We've added your card details</p>
+        <a href="#" class="main__completed__button form__button">Continue</a>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
